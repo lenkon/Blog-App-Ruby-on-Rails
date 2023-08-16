@@ -23,7 +23,12 @@ default: &default
 
 development:
   <<: *default
-  database: Blog_App_Ruby_on_Rails_development
+  #database: Blog_App_Ruby_on_Rails_development
+  database: blog_app
+  username: postgres
+  password: x
+  host: localhost
+  port: 5432
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
