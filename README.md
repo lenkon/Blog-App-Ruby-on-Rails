@@ -43,6 +43,8 @@
 ### Key Features <a name="key-features"></a>
 
 - **Create data model**
+- **Set up associations between models**
+- **Write SQL queries with Active Record**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
