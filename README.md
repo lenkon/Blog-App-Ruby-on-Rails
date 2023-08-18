@@ -45,6 +45,7 @@
 - **Create data model**
 - **Set up associations between models**
 - **Write SQL queries with Active Record**
+- **Validations and model unit test**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -86,6 +87,11 @@ To run the project, execute the following command:
 
 ```
   $ rails server
+```
+
+### Run tests <a name="run-tests"></a>
+``` 
+  $ rspec
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
