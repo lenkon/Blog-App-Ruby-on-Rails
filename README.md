@@ -46,6 +46,7 @@
 - **Set up associations between models**
 - **Write SQL queries with Active Record**
 - **Validations and model unit test**
+- **RESTful routes**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
