@@ -22,4 +22,14 @@ RSpec.describe 'Posts', type: %w[request feature] do
     expect(response).to render_template('show')
     expect(response.status).to eq(200)
   end
+
+  it 'renders index template with correct placeholder text' do
+    visit '/users/3/posts/'
+    expect(page).to have_text('User posts')
+  end
+
+  it 'renders show template with correct placeholder text' do
+    visit '/users/3/posts/3'
+    expect(page).to have_text('Post details')
+  end
 end
