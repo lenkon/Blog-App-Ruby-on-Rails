@@ -47,6 +47,7 @@
 - **Write SQL queries with Active Record**
 - **Validations and model unit test**
 - **RESTful routes**
+- **Controllers unit tests**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
