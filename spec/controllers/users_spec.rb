@@ -22,4 +22,14 @@ RSpec.describe 'Users', type: %w[request feature] do
     expect(response).to render_template('show')
     expect(response.status).to eq(200)
   end
+
+  it 'renders index template with correct placeholder text' do
+    visit '/users/'
+    expect(page).to have_text('Users list')
+  end
+
+  it 'renders show template with correct placeholder text' do
+    visit '/users/3'
+    expect(page).to have_text('User profile')
+  end
 end
