@@ -48,6 +48,7 @@
 - **Validations and model unit test**
 - **RESTful routes**
 - **Controllers unit tests**
+- **Wireframe design implementation**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

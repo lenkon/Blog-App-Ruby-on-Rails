@@ -1,1 +1,21 @@
 <h1>Users list</h1>
+
+<ul class="d-flex flex-column" style="list-style-type: none;">
+  <% @users.each do |user| %>
+    <%= link_to user_path(user.id) do %>
+    <li class="mb-4">
+      <div class="row">
+        <div class="col-md-2 col-sm-12">
+          <img src="<%= user.photo %>" class="img-thumbnail" />
+        </div>
+        <div class="col-md-5 col-sm-12">
+          <div><%= user.name %></div>
+        </div>
+        <div class="col-md-5 col-sm-12">
+          <div>Number of posts: <%= user.posts_counter || 0 %></div>
+        </div>   
+      </div>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
