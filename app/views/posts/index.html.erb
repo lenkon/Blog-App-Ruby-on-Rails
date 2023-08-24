@@ -1,1 +1,41 @@
 <h1>User posts</h1>
+
+<div class="row">
+  <div class="col-md-2 col-sm-12">
+    <img src="<%= @user.photo %>" class="img-thumbnail" />
+  </div>
+  <div class="col-md-8 col-sm-12">
+    <div><%= @user.name %></div>
+  </div>
+  <div class="col-md-2 col-sm-12">
+    <div>Number of posts: <%= @user.posts_counter || 0 %></div>
+  </div>
+
+  <% @user.posts.each do |post| %>
+    <section class="mt-4">
+      <%= link_to user_post_path(@user.id, post.id) do %>
+        <h2><%= post.title %></h2>
+      <% end %>
+      <p><%= post.text %></p>
+      <div class="d-flex justify-content-end">
+        <span>Comments: <%= post.comments_counter || 0 %>,</span>
+        <span class="mx-1">Likes: <%= post.likes_counter || 0 %></span>
+      </div>
+    </section>
+    <% if post.five_recent_comments.length == 0 %>
+      <p>No comments Available!</p>
+    <% else %>
+    <% post.five_recent_comments.each do |comment| %>
+      <p><%=comment.author.name %>: <%=comment.text %></p>
+    <%end%>
+    <% end %>
+  <% end %>
+
+  <div class="d-flex justify-content-center mt-3">
+   <ul class="d-flex list-unstyled" style="list-style-type: none;">
+    <% 20.times do |item| %>
+     <li class="p-1"><%= item %></li>
+    <% end %>
+   </ul>
+  </div>
+</div>
