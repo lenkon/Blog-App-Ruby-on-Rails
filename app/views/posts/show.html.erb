@@ -6,6 +6,7 @@
     <div class="d-flex justify-content-end">
       <span>Comments: <%= @post.comments_counter || 0 %>, </span>
       <span class="mx-1"> Likes: <%= @post.likes_counter || 0 %></span>
+      <%= render 'posts/like_form' %>
     </div>
   <p><%= @post.text %></p>
 </section>
