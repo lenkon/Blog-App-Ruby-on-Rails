@@ -49,6 +49,7 @@
 - **RESTful routes**
 - **Controllers unit tests**
 - **Wireframe design implementation**
+- **Forms**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

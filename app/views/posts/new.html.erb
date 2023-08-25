@@ -1,0 +1,25 @@
+<h1>Add Post</h1>
+
+<% if flash[:error] %>
+  <div class="alert alert-danger"><%= flash[:error] %></div>
+<% end %>
+
+<%= form_with model: new_post, url: user_posts_path, method: :post, local: true, scope: :post do |f| %>
+<div>
+  <div>
+    <%= f.label :title %> <br/>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="mt-3">
+   <div>
+     <%= f.label :text %> <br/>
+     <%= f.text_area :text %>
+   </div>
+  </div>
+
+  <div>
+    <%= f.submit "Add" %>
+  </div>
+</div>
+<% end %>

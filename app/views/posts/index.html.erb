@@ -3,10 +3,15 @@
 <div class="row">
   <div class="col-md-2 col-sm-12">
     <img src="<%= @user.photo %>" class="img-thumbnail" />
+    <div>
+        <%= link_to 'Add New Post', new_user_post_url(@user) %>
+    </div>
   </div>
+
   <div class="col-md-8 col-sm-12">
     <div><%= @user.name %></div>
   </div>
+
   <div class="col-md-2 col-sm-12">
     <div>Number of posts: <%= @user.posts_counter || 0 %></div>
   </div>
@@ -17,11 +22,18 @@
         <h2><%= post.title %></h2>
       <% end %>
       <p><%= post.text %></p>
+      <%= link_to 'Add Comment', new_user_post_comment_url(post.author, post) %>
+
       <div class="d-flex justify-content-end">
         <span>Comments: <%= post.comments_counter || 0 %>,</span>
         <span class="mx-1">Likes: <%= post.likes_counter || 0 %></span>
+
+        <%= form_with url: user_post_likes_path(post.author, post), method: :post do |f| %>
+          <%= f.submit 'Like post' %>
+        <% end %>
       </div>
     </section>
+
     <% if post.five_recent_comments.length == 0 %>
       <p>No comments Available!</p>
     <% else %>
