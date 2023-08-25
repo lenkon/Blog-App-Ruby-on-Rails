@@ -3,7 +3,11 @@
 <div class="row">
   <div class="col-md-2 col-sm-12">
     <img src="<%= @user.photo %>" class="img-thumbnail" />
+    <div>
+        <%= link_to 'Add Post', new_user_post_url(@user) %>
+    </div>
   </div>
+
   <div class="col-md-8 col-sm-12" style="font-size: 28px;">
     <div><%= @user.name %></div>
   </div>
@@ -27,6 +31,9 @@
       <div class="d-flex justify-content-end">
         <span>Comments: <%= post.comments_counter || 0 %> </span>
         <span class="mx-2"> Likes: <%= post.likes_counter || 0 %></span>
+        <div>
+          <%= link_to 'Add Comment', new_user_post_comment_url(post.author, post) %>
+        </div>
       </div>
     </section>
   <% end %>
@@ -35,5 +42,4 @@
       See all posts
      <% end %>
   </div>
-
 </div>
