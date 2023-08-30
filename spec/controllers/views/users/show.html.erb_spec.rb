@@ -49,7 +49,6 @@ RSpec.describe 'User show page', type: :system do
       expect(page).to have_selector(:link_or_button, 'See all posts')
     end
 
-
     it 'Redirects to user post show page' do
       visit user_posts_path(@user_one.id)
       expect(page).to have_current_path user_posts_path(@user_one.id)
