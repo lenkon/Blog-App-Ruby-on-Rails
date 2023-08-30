@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Post', type: :system do
   describe 'show page' do
     before(:each) do
-      @user = User.create(name: 'Max', bio: 'Full-stack developer', photo: 'http://localhost/123', post_counter: 3)
+      @user = User.create(name: 'Max', bio: 'Full-stack developer', photo: 'http://localhost/123', posts_counter: 3)
       @post_one = Post.create(title: 'Post1', text: 'Post text1', author_id: @user.id, comments_counter: 0,
                               likes_counter: 0)
       @post_two = Post.create(title: 'Post2', text: 'Post text2', author_id: @user.id, comments_counter: 0,

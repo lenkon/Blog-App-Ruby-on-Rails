@@ -31,7 +31,7 @@ RSpec.describe 'Posts', type: %w[request feature] do
   end
 
   it 'renders index template with correct placeholder text' do
-     visit "/users/#{@user.id}/posts/"
+    visit "/users/#{@user.id}/posts/"
     expect(page).to have_text('User posts')
   end
 
