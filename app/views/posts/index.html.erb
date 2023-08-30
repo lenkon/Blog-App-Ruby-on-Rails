@@ -16,7 +16,8 @@
     <div>Number of posts: <%= @user.posts_counter || 0 %></div>
   </div>
 
-  <% @user.posts.each do |post| %>
+  
+  <% @posts.each do |post| %>
     <section class="mt-4">
       <%= link_to user_post_path(@user.id, post.id) do %>
         <h2><%= post.title %></h2>
@@ -37,17 +38,14 @@
     <% if post.five_recent_comments.length == 0 %>
       <p>No comments Available!</p>
     <% else %>
-    <% post.five_recent_comments.each do |comment| %>
-      <p><%=comment.author.name %>: <%=comment.text %></p>
+      <% post.five_recent_comments.each do |comment| %>
+        <p><%=comment.author.name %>: <%=comment.text %></p>
+      <%end%>
     <%end%>
-    <% end %>
-  <% end %>
-
+    
+  <% end %>  
   <div class="d-flex justify-content-center mt-3">
-   <ul class="d-flex list-unstyled" style="list-style-type: none;">
-    <% 20.times do |item| %>
-     <li class="p-1"><%= item %></li>
-    <% end %>
-   </ul>
+    <span><strong>Pagination:<strong></span>
+    <%= will_paginate @posts %>
   </div>
 </div>

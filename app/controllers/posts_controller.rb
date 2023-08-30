@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
-    @user = User.find(params[:user_id].to_i)
+    @user = User.includes(posts: [:comments]).find(params[:user_id].to_i)
+    @posts = @user.posts.paginate(page: params[:page], per_page: 5)
   end
 
   def show
