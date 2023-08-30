@@ -50,6 +50,8 @@
 - **Controllers unit tests**
 - **Wireframe design implementation**
 - **Forms**
+- **Fix N+1 query problem**
+- **Integration test**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -107,6 +109,18 @@ To run the project, execute the following command:
 👤 **Inoulen**
 
 - GitHub: [@K Inoulen Shanongba](https://github.com/lenkon)
+
+👤 **lordksix**
+
+- GitHub: [@lordksix](https://github.com/lordksix)
+- LinkedIn: [@wladpasquel](https://www.linkedin.com/in/wladpasquel/)
+- Medium: [@wladimir.pasquel](https://medium.com/@wladimir.pasquel)
+
+👤 **Mahamadou Nouridine**
+
+- GitHub: [mahamadou-nouridine](https://github.com/mahamadou-nouridine)
+- Linkedin: [mahamadou-nouridine](https://www.linkedin.com/in/mahamadou-nouridine)
+- Twitter: [Nouridine_Dino](https://twitter.com/Nouridine_Dino)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
