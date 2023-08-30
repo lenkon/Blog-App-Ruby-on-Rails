@@ -61,6 +61,23 @@ RSpec.describe 'Post', type: :system do
       expect(page).to have_content('Likes: 1')
     end
 
+    it 'should render pagination' do
+      12.times do |i|
+        Post.create(
+          title: "Title #{i + 2}",
+          text: "Post text #{i + 2}",
+          author_id: @user.id,
+          comments_counter: 0,
+          likes_counter: 0
+        )
+      end
+
+      get user_posts_path(@user)
+      expect(response).to have_http_status(:success)
+      visit user_posts_path(@user.id)
+      expect(page).to have_content('Pagination')
+    end
+
     it 'Redirects to posts show page' do
       visit user_posts_path(@user.id)
       click_link 'Post1'
