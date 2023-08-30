@@ -52,6 +52,7 @@
 - **Forms**
 - **Fix N+1 query problem**
 - **Integration test**
+- **Add devise**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
