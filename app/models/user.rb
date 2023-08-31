@@ -14,4 +14,9 @@ class User < ApplicationRecord
   def recent_posts
     posts.order('created_at ASC').first(3)
   end
+
+  before_create :default_post_counter
+  def default_post_counter
+    post_counter || 0
+  end
 end
