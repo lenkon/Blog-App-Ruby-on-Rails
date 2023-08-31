@@ -1,0 +1,10 @@
+<header class="w-full p-4">
+  <div class="flex flex-wrap items-center justify-end gap-4 w-10/12 mx-auto">
+    <% if user_signed_in? %>
+      <%= button_to 'Sign out', destroy_user_session_path, form_class: 'px-4 py-2 border-2 border-black cursor:pointer', method: :delete %>
+    <% else %>
+      <%= link_to "Sign in", new_user_session_path, class: 'px-4 py-2 border-2 border-black cursor:pointer'  %>
+      <%= link_to "Sign up", new_user_registration_path, class: 'px-4 py-2 border-2 border-black cursor:pointer'  %>
+    <% end %>
+  </div>
+</header>
