@@ -16,7 +16,7 @@ class User < ApplicationRecord
   end
 
   before_create :default_post_counter
-  def default_post_counter
-    post_counter || 0
+  def default_posts_counter
+    posts_counter || 0
   end
 end
