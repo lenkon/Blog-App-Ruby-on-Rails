@@ -6,7 +6,7 @@ RSpec.describe 'Posts', type: %w[request feature] do
       name: 'Max',
       bio: 'Full-stack developer',
       photo: 'http://localhost/123',
-      posts_counter: 0
+      email: '12345@email.com', password: 'abcdef'
     )
     @user.save
     @post = Post.create(
