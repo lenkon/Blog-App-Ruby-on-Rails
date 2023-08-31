@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :posts, foreign_key: 'author_id'
   has_many :comments, foreign_key: 'author_id'
   has_many :likes, foreign_key: 'author_id'
+  before_validation :default_values
+  before_create :default_post_counter
 
   validates :name, presence: true
   validates :posts_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
@@ -15,8 +17,13 @@ class User < ApplicationRecord
     posts.order('created_at ASC').first(3)
   end
 
-  before_create :default_post_counter
+  private
+  
   def default_posts_counter
     posts_counter || 0
+  end
+
+  def default_values
+    self.photo = 'https://imgur.com/eud28Lr'    
   end
 end
