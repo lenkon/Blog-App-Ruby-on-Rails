@@ -1,0 +1,5 @@
+<% if can? :destroy, @post %>
+  <%= form_with url: user_post_path(@post.author.id, @post.id), :method => :delete do |f| %>
+    <%= f.submit 'Delete post', class: 'btn-danger btn-sm mx-3' %>
+  <% end %>
+<% end %>

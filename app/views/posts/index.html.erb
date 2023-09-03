@@ -32,6 +32,11 @@
         <%= form_with url: user_post_likes_path(post.author, post), method: :post do |f| %>
           <%= f.submit 'Like post' %>
         <% end %>
+        <% if can? :destroy, post %>
+          <%= form_with url: user_post_path(@user.id, post.id), method: :delete do |f| %>
+            <%= f.submit 'Delete post', class: 'btn-danger btn-sm mx-3' %>
+          <% end %>
+        <% end %>
       </div>
     </section>
 
@@ -41,6 +46,14 @@
       <% post.five_recent_comments.each do |comment| %>
         <p><%=comment.author.name %>: <%=comment.text %></p>
       <%end%>
+      <div class="d-flex">
+      <p><%=comment.author.name %>: <%=comment.text %></p>
+      <% if can? :destroy, comment %>
+        <%= form_with url: user_post_comment_path(post.author.id, post.id, comment.id), :method => :delete do |f| %>
+          <%= f.submit 'Delete', class: 'glyphicon glyphicon-trash mx-2' %>
+        <% end %>
+      <% end %>
+      </div>
     <%end%>
     
   <% end %>  
