@@ -40,7 +40,7 @@ class PostsController < ApplicationController
     current_user.save
     redirect_to user_path(current_user.id)
   end
-  
+
   private
 
   def post_params

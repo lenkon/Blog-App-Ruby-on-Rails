@@ -27,7 +27,7 @@ class CommentsController < ApplicationController
     post.save
     redirect_to user_posts_path(current_user.id)
   end
-  
+
   private
 
   def comment_params
